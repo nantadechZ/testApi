@@ -27,6 +27,6 @@ app.get('/api/provinces', checkSecretKey, (req, res) => {
   res.json(data);
 });
 
-app.listen(1000, () => {
-  console.log('API server listening on http://localhost:1000');
+app.listen(10000, () => {
+  console.log('API server listening on http://localhost:10000');
 });
