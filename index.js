@@ -13,13 +13,20 @@ const data = [
 const SECRET_KEY = '15082541';
 
 // Define a middleware function to check for the key
-
+const checkSecretKey = (req, res, next) => {
+  const { auth_key } = req.query; // You can also check headers or cookies
+  if (auth_key === SECRET_KEY) {
+    next();
+  } else {
+    res.status(401).send('Unauthorized');
+  }
+};
 
 // Use the middleware function to protect your API path
-app.get('/api/provinces', (req, res) => {
+app.get('/api/provinces', checkSecretKey, (req, res) => {
   res.json(data);
 });
 
-app.listen(10000, () => {
-  console.log('API server listening on http://localhost:10000');
+app.listen(1000, () => {
+  console.log('API server listening on http://localhost:1000');
 });
