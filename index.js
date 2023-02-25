@@ -30,3 +30,4 @@ app.get('/api/provinces', checkSecretKey, (req, res) => {
 app.listen(10000, () => {
   console.log('API server listening on http://localhost:10000');
 });
+module.exports = app;
