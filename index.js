@@ -27,5 +27,7 @@ app.get('/api/provinces', checkSecretKey, (req, res) => {
   res.json(data);
 });
 
-app.listen(process.env.PORT || 3000)
+app.listen(10000, () => {
+  console.log('API server listening on http://localhost:10000');
+});
 module.exports = app;
