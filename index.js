@@ -20,6 +20,6 @@ app.get('/api/provinces', (req, res) => {
   res.json(data);
 });
 
-// app.listen(3002, () => {
-//   console.log('API server listening on http://localhost:3002');
-// });
+app.listen(10000, () => {
+  console.log('API server listening on http://localhost:10000');
+});
